@@ -1,10 +1,10 @@
 import type { Metadata } from "next";
-import { Inter_Tight } from "next/font/google";
+import { Roboto } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter_Tight({
+const inter = Roboto({
   subsets: ["latin"],
-  display: "swap",
+  weight: ["400"],
 });
 
 export const metadata: Metadata = {
@@ -20,7 +20,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${inter.className} antialiased`}>{children}</body>
+      <body className={`${inter.className} bg-neutral-900 antialiased`}>
+        <div className="mx-auto h-screen w-[30%]">{children}</div>
+      </body>
     </html>
   );
 }
